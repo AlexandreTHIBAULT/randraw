@@ -15,13 +15,13 @@ void main(){
 
     switch(i){
     case 0:
-        f = fopen( "hi.txt", "r");
+        f = fopen( "/home/yreln/Documents/Prog/C/randraw/paterns/hi.txt", "r");
         break;
     case 1:
-        f = fopen( "fish.txt", "r");
+        f = fopen( "/home/yreln/Documents/Prog/C/randraw/paterns/fish.txt", "r");
         break;
     case 2:
-        f = fopen( "star.txt", "r");
+        f = fopen( "/home/yreln/Documents/Prog/C/randraw/paterns/star.txt", "r");
         break;
     
     default:
@@ -48,6 +48,6 @@ void write(FILE * f){
 	}
 
     ligneColorL[strlen(ligneColorL)-1] = ' ';
-    sprintf(ligneC, "echo \'%s\n%s\'", ligneColorD, ligneColorL);
+    sprintf(ligneC, "echo \'\n%s\n%s\'", ligneColorD, ligneColorL);
     system(ligneC);
 }
