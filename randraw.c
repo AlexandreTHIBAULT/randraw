@@ -7,32 +7,40 @@ void write(FILE * f);
 
 void main(){
     FILE * f;
-    int nbPattern = 4;
+    int nbPattern = 5;
     int i;
+
+    char * path = (char *) malloc(10000);
+    char * paternPath = getenv("PATERN_PATH");
 
     srand(time(NULL));
     i = rand()%nbPattern;
 
     switch(i){
     case 0:
-        f = fopen( "/home/yreln/Documents/Prog/C/randraw/paterns/hi.txt", "r");
+    	sprintf(path, "%s/fish.txt", paternPath);
         break;
     case 1:
-        f = fopen( "/home/yreln/Documents/Prog/C/randraw/paterns/fish.txt", "r");
+    	sprintf(path, "%s/arrows.txt", paternPath);
         break;
     case 2:
-        f = fopen( "/home/yreln/Documents/Prog/C/randraw/paterns/star.txt", "r");
+    	sprintf(path, "%s/heart.txt", paternPath);
         break;
     case 3:
-        f = fopen( "/home/yreln/Documents/Prog/C/randraw/paterns/heart.txt", "r");
+    	sprintf(path, "%s/hi.txt", paternPath);
+        break;
+    case 4:
+    	sprintf(path, "%s/star.txt", paternPath);
         break;
     
     default:
     
         break;
     }
-
+    
+    f = fopen(path, "r");
     write(f);
+    free(path);
 }
 
 void write(FILE * f){
@@ -53,4 +61,9 @@ void write(FILE * f){
     ligneColorL[strlen(ligneColorL)-1] = ' ';
     sprintf(ligneC, "echo \'\n%s\n%s\'", ligneColorD, ligneColorL);
     system(ligneC);
+
+    free(ligne);
+    free(ligneColorD);
+    free(ligneColorL);
+    free(ligneC);
 }
