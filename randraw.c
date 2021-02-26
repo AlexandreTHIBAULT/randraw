@@ -7,7 +7,7 @@ void write(FILE * f);
 
 void main(){
     FILE * f;
-    int nbPattern = 3;
+    int nbPattern = 4;
     int i;
 
     srand(time(NULL));
@@ -22,6 +22,9 @@ void main(){
         break;
     case 2:
         f = fopen( "/home/yreln/Documents/Prog/C/randraw/paterns/star.txt", "r");
+        break;
+    case 3:
+        f = fopen( "/home/yreln/Documents/Prog/C/randraw/paterns/heart.txt", "r");
         break;
     
     default:
