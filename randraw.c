@@ -2,45 +2,54 @@
 #include <stdlib.h> 
 #include <string.h>
 #include <time.h>
+#include <dirent.h> 
 
 void write(FILE * f);
 
 void main(){
+    DIR *d;
+    struct dirent *dir;
     FILE * f;
-    int nbPattern = 5;
+    int nbPattern = 0;
     int i;
-
     char * path = (char *) malloc(10000);
     char * paternPath = getenv("PATERN_PATH");
+
+    d = opendir(paternPath);
+    if(d==NULL){
+        printf("PATERN_PATH not defined");
+        return;
+    }
+
+    while ((dir = readdir(d)) != NULL) {
+        nbPattern++;
+        //printf("%s\n", dir->d_name);
+    }
+    nbPattern -= 2;
+
+    //printf("%d\n", nbPattern);
 
     srand(time(NULL));
     i = rand()%nbPattern;
 
-    switch(i){
-    case 0:
-    	sprintf(path, "%s/fish.txt", paternPath);
-        break;
-    case 1:
-    	sprintf(path, "%s/arrows.txt", paternPath);
-        break;
-    case 2:
-    	sprintf(path, "%s/heart.txt", paternPath);
-        break;
-    case 3:
-    	sprintf(path, "%s/hi.txt", paternPath);
-        break;
-    case 4:
-    	sprintf(path, "%s/star.txt", paternPath);
-        break;
+    d = opendir(paternPath);
+    while ((dir = readdir(d)) != NULL) {
     
-    default:
-    
-        break;
+        if(strcmp(dir->d_name, ".") && strcmp(dir->d_name, "..")){
+            if(!i){
+                //printf("%s\n", dir->d_name);
+                sprintf(path, "%s/%s", paternPath, dir->d_name);
+                f = fopen(path, "r");
+                //printf("%s\n", path);
+                write(f);
+                free(path);
+                return;
+            }
+            i--;
+        }
+        //printf("%d\n", i);
     }
     
-    f = fopen(path, "r");
-    write(f);
-    free(path);
 }
 
 void write(FILE * f){
