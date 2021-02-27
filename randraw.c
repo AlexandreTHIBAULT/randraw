@@ -6,7 +6,7 @@
 
 void write(FILE * f);
 
-void main(){
+void main(int argc, char** argv){
     DIR *d;
     struct dirent *dir;
     FILE * f;
@@ -18,6 +18,18 @@ void main(){
     d = opendir(paternPath);
     if(d==NULL){
         printf("PATERN_PATH not defined");
+        return;
+    }
+
+    if(argc>2){
+        printf("To many arguments");
+        return;
+    }else if(argc==2){
+        sprintf(path, "%s/%s.txt", paternPath, argv[1]);
+        f = fopen(path, "r");
+        //printf("%s\n", path);
+        write(f);
+        free(path);
         return;
     }
 
