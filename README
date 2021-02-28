@@ -1,0 +1,23 @@
+Usage: randraw --option "value"
+
+Randraw can draw random shape from PATERN_PATH directory.
+It can also draw selected one from it or from a given link.
+
+Use:
+    In .bashrc, add:
+        export PATERN_PATH=[link of your patern directory]
+        alias randraw=[link of your randraw directory]
+
+    You can add:
+        randraw
+    To draw a random shape at the start of a window.
+
+Options:
+    --help | -h
+        Print help.
+    
+    --patern x | -p x
+        Draw a selected patern from PATERN_PATH directory.
+
+    --link x | -l x
+        Draw the given patern

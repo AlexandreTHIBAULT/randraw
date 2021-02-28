@@ -21,16 +21,35 @@ void main(int argc, char** argv){
         return;
     }
 
-    if(argc>2){
+    if(argc>3){
         printf("To many arguments");
         return;
     }else if(argc==2){
-        sprintf(path, "%s/%s.txt", paternPath, argv[1]);
-        f = fopen(path, "r");
-        //printf("%s\n", path);
-        write(f);
-        free(path);
-        return;
+        if(!strcmp(argv[1], "-h") || !strcmp(argv[1], "--help")){
+            printf("Usage: randraw --option \"value\"\n\nRandraw can draw random shape from PATERN_PATH directory.\nIt can also draw selected one from it or from a given link.\n\nUse:\n    In .bashrc, add:\n        export PATERN_PATH=[link of your patern directory]\n        alias randraw=[link of your randraw directory]\n\n    You can add:\n        randraw\n    To draw a random shape at the start of a window.\n\nOptions:\n    --help | -h\n        Print help.\n    \n    --patern x | -p x\n        Draw a selected patern from PATERN_PATH directory.\n\n    --link x | -l x\n        Draw the given patern\n\n");
+            return;
+        }else{
+            printf("Wrong arguments");
+            return;
+        }
+    }else if(argc==3){
+        if(!strcmp(argv[1], "-p") || !strcmp(argv[1], "--patern")){
+            sprintf(path, "%s/%s.txt", paternPath, argv[2]);
+            f = fopen(path, "r");
+            //printf("%s\n", path);
+            write(f);
+            free(path);
+            return;
+        }else if(!strcmp(argv[1], "-l") || !strcmp(argv[1], "--link")){
+            f = fopen(argv[2], "r");
+            //printf("%s\n", argv[2]);
+            write(f);
+            free(path);
+            return;
+        }else{
+            printf("Wrong arguments");
+            return;
+        }
     }
 
     while ((dir = readdir(d)) != NULL) {
