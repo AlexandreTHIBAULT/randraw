@@ -35,3 +35,7 @@ Or
 
     -l [x]
         
+## Exemples
+![image](https://github.com/AlexandreTHIBAULT/randraw/assets/49167873/194f35ff-b242-4b72-bb47-bb7761a9b068)
+![image](https://github.com/AlexandreTHIBAULT/randraw/assets/49167873/c0c0b55f-5acf-4ea4-b5cc-1faa8730a873)
+![image](https://github.com/AlexandreTHIBAULT/randraw/assets/49167873/6ba73fac-a64e-4f1d-a5af-768220793c8a)
