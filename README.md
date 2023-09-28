@@ -36,6 +36,7 @@ Or
     -l [x]
         
 ## Exemples
-![image](https://github.com/AlexandreTHIBAULT/randraw/assets/49167873/194f35ff-b242-4b72-bb47-bb7761a9b068)
-![image](https://github.com/AlexandreTHIBAULT/randraw/assets/49167873/c0c0b55f-5acf-4ea4-b5cc-1faa8730a873)
-![image](https://github.com/AlexandreTHIBAULT/randraw/assets/49167873/6ba73fac-a64e-4f1d-a5af-768220793c8a)
+![Capture--28-09-2023--16-40-25--1240x846](https://github.com/AlexandreTHIBAULT/randraw/assets/49167873/9b76c80e-84d4-4ffa-96b9-60eba0bc7cf2)
+![Capture--28-09-2023--16-41-13--1240x846](https://github.com/AlexandreTHIBAULT/randraw/assets/49167873/9d08efdd-80d8-42bd-9f54-db16b53be246)
+![Capture--28-09-2023--16-42-04--1240x846](https://github.com/AlexandreTHIBAULT/randraw/assets/49167873/c95fe2cd-da3d-4933-9823-5d8f95379f88)
+
